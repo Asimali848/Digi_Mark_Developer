@@ -1,6 +1,4 @@
-"use client";
-
-import * as React from "react";
+import { forwardRef, useState } from "react";
 
 import { Menu, Search, X } from "lucide-react";
 
@@ -50,7 +48,7 @@ const pages = [
 ];
 
 const Navbar = () => {
-  const [showSearchMobile, setShowSearchMobile] = React.useState(false);
+  const [showSearchMobile, setShowSearchMobile] = useState(false);
 
   return (
     <div className="sticky top-0 z-50 mx-auto w-full border-b-2 bg-white shadow-lg">
@@ -273,7 +271,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-const ListItem = React.forwardRef<
+const ListItem = forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, ...props }, ref) => {
